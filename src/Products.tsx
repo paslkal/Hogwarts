@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import './Products.css'
 import likeEmpty from './assets/like-heart-empty.svg'
 import likePressed from './assets/like-heart-pressed.svg'
+import { Book, NewBook } from "./ProductTypes"
 
 function saveToStorage(books: NewBook[]) {
   localStorage.setItem('books', JSON.stringify(books))
@@ -11,30 +12,6 @@ function loadFromStorage() : NewBook[] {
   const books = localStorage.getItem('books')
   return books ? JSON.parse(books) : [] 
 } 
-
-interface Book{
-  number: number,
-  title: string,
-  originalTitle: string,
-  releaseDate: string,
-  description: string,
-  pages: number,
-  cover: string,
-  index: number
-}
-
-interface NewBook{
-  number: number,
-  title: string,
-  originalTitle: string,
-  releaseDate: string,
-  description: string,
-  pages: number,
-  cover: string,
-  index: number,
-  // new property
-  isLiked: boolean
-}
 
 function Products() {
   const [books, setBooks] = useState<NewBook[]>(loadFromStorage())
