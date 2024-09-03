@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import {useNavigate} from 'react-router-dom'
 import { loadFromStorage, saveToStorage } from "./localStorage"
 import { NewBook } from "./ProductTypes"
+import dayjs from "dayjs"
 
 function CreateProduct() {
   const [title, setTitle] = useState('')
@@ -23,12 +24,13 @@ function CreateProduct() {
     
     const newNumber = 1 + number
     const newIndex = 1 + index
+    const newReleaseDate = dayjs(releaseDate).format('MMM D, YYYY')
 
     const newBook: NewBook = {
       number: newNumber,
       title,
       originalTitle,
-      releaseDate,
+      releaseDate: newReleaseDate,
       description,
       pages,
       cover,
