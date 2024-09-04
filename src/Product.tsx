@@ -69,16 +69,16 @@ function Product() {
   const {cover} = book
 
   return (
-    <>
-      <div className="image-container">
-        <img src={cover} alt=""/>
+    <div>
+      <h1>{title}</h1>
+      <div className="">
+        <img className="cover" src={cover} alt=""/>
       </div>
-      <p>{title}</p>
       <p>Pages: {pages}</p>
       <p>Release Date: {releaseDate}</p>
       <p>Description: {description}</p>
-      <Link to='/products'>Go back</Link>
-    </>
+      <Link style={{fontSize: "xx-large"}} to='/products'>Go back</Link>
+    </div>
   )
 }
 
