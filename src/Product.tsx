@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { Book, NewBook } from "./ProductTypes"
 import { loadFromStorage } from "./localStorage"
+import { Link } from "react-router-dom"
 
 function Product() {
   // get product from API  
@@ -61,10 +62,22 @@ function Product() {
 
   if (!book) book = exampleBook
 
+  const {title} = book
+  const {description} = book
+  const {releaseDate} = book
+  const {pages} = book
+  const {cover} = book
 
   return (
     <>
-      <img src={book.cover} alt="" />
+      <div className="image-container">
+        <img src={cover} alt=""/>
+      </div>
+      <p>{title}</p>
+      <p>Pages: {pages}</p>
+      <p>Release Date: {releaseDate}</p>
+      <p>Description: {description}</p>
+      <Link to='/products'>Go back</Link>
     </>
   )
 }
