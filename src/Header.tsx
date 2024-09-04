@@ -5,7 +5,7 @@ function Header() {
 
   return (
     <header>
-      <Link style={{fontSize: "20px"}} to="/create-product">Create Product</Link>
+      <Link style={{fontSize: "xx-large"}} to="/create-product">Create Product</Link>
     </header>
   )
 }

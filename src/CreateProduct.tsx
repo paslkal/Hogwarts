@@ -3,6 +3,7 @@ import {useNavigate} from 'react-router-dom'
 import { loadFromStorage, saveToStorage } from "./localStorage"
 import { NewBook } from "./ProductTypes"
 import dayjs from "dayjs"
+import { Link } from "react-router-dom"
 
 function CreateProduct() {
   const [title, setTitle] = useState('')
@@ -102,6 +103,7 @@ function CreateProduct() {
           value="Submit" 
         />
       </form>
+      <Link to="/products" style={{fontSize: "xx-large"}}>Go back</Link>
     </>
   )
 }
