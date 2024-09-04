@@ -68,7 +68,7 @@ function Products() {
   }
 
   return (
-    <div className="product">
+    <div className="products">
       <label>Filter books: </label>
       <select onChange={handleFilter}>
         <option>All</option>
@@ -88,15 +88,17 @@ function Products() {
                   <div className="product-image-container">
                     <img className="product-image" src={cover} alt={title}/>
                   </div>
-                  <p>{title}</p>
+                  <p className="title">{title}</p>
                 </Link>
-                <div className="like-container" onClick={() => handleLike(index)}>
-                  <img className="like-image"
-                    src={isLiked ? likePressed : likeEmpty}
-                    alt="like-image"
-                  />
+                <div className="buttom">
+                  <div className="like-container" onClick={() => handleLike(index)}>
+                    <img className="like-image"
+                      src={isLiked ? likePressed : likeEmpty}
+                      alt="like-image"
+                    />
+                  </div>
+                  <button onClick={() => handleDelete(index)}>delete</button>
                 </div>
-                <button onClick={() => handleDelete(index)}>delete</button>
               </div>
             )
           })
