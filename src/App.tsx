@@ -7,7 +7,7 @@ import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom'
 function App() {
   return(
     <>
-      <BrowserRouter basename='/hogwarts'>
+      <BrowserRouter>
         <Routes>
           <Route path='/products' element={<Products/>}/>
           <Route path='/products/:id' element={<Product/>}/>
