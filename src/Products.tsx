@@ -50,10 +50,27 @@ function Products() {
     saveToStorage(filteredBooks)
   }
 
+  const handleFilter = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const option = e.target.value
+    
+    const originalBooks = loadFromStorage()
+
+    if (option === 'Liked') {
+      const filteredBooks = books.filter(book => book.isLiked)
+
+      setBooks(filteredBooks)
+
+      console.log(filteredBooks)
+    } else {
+      setBooks(originalBooks)
+      console.log(originalBooks)
+    }
+  }
+
   return (
     <div className="product">
       <label>Filter books: </label>
-      <select>
+      <select onChange={handleFilter}>
         <option>All</option>
         <option>Liked</option>
       </select>
