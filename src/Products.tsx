@@ -4,6 +4,7 @@ import likeEmpty from './assets/like-heart-empty.svg'
 import likePressed from './assets/like-heart-pressed.svg'
 import { Book, NewBook } from "./ProductTypes"
 import { loadFromStorage, saveToStorage } from "./localStorage"
+import { Link } from "react-router-dom"
 
 function Products() {
   const [books, setBooks] = useState<NewBook[]>(loadFromStorage())
@@ -60,9 +61,12 @@ function Products() {
 
           return (
             <div className="product-container" key={index}>
-              <div className="product-image-container">
-                <img className="product-image" src={cover} alt={title}/>
-              </div>
+              <Link to={`/products/${index}`}>
+                <div className="product-image-container">
+                  <img className="product-image" src={cover} alt={title}/>
+                </div>
+                <p>{title}</p>
+              </Link>
               <div className="like-container" onClick={() => handleLike(index)}>
                 <img className="like-image"
                   src={isLiked ? likePressed : likeEmpty} 
