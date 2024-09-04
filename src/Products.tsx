@@ -5,6 +5,7 @@ import likePressed from './assets/like-heart-pressed.svg'
 import { Book, NewBook } from "./ProductTypes"
 import { loadFromStorage, saveToStorage } from "./localStorage"
 import { Link } from "react-router-dom"
+import Header from "./Header"
 
 function Products() {
   const [books, setBooks] = useState<NewBook[]>(loadFromStorage())
@@ -69,6 +70,7 @@ function Products() {
 
   return (
     <div className="products">
+      <Header/>
       <label>Filter books: </label>
       <select onChange={handleFilter}>
         <option>All</option>

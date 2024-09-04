@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom"
 import { NewBook } from "./ProductTypes"
 import { loadFromStorage } from "./localStorage"
 import { Link } from "react-router-dom"
+import Header from './Header' 
 
 function Product() {
   // get product from API  
@@ -70,6 +71,7 @@ function Product() {
 
   return (
     <div>
+      <Header/>
       <h1>{title}</h1>
       <div className="">
         <img className="cover" src={cover} alt=""/>

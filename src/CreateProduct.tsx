@@ -47,7 +47,10 @@ function CreateProduct() {
 
   return (
     <>
+      <h1>Create Product</h1>
+      <h2>Add new J.K. Rowling book</h2>
       <form onSubmit={handleSubmit}>
+        <p>Title</p>
         <input
           required 
           type="text" 
@@ -55,6 +58,7 @@ function CreateProduct() {
           onChange={e => setTitle(e.target.value)} 
           placeholder="Title"
         />
+        <p>Original Title</p>
         <input
           required 
           type="text" 
@@ -62,6 +66,7 @@ function CreateProduct() {
           onChange={e => setOriginalTitle(e.target.value)} 
           placeholder="Original Title"
         />
+        <p>Release Date</p>
         <input
           required 
           type="date" 
@@ -69,6 +74,7 @@ function CreateProduct() {
           onChange={e => setReleaseDate(e.target.value)} 
           placeholder="Release Date"
         />
+        <p>Description</p>
         <input
           required 
           type="text" 
@@ -76,6 +82,7 @@ function CreateProduct() {
           onChange={e => setDescription(e.target.value)} 
           placeholder="Description"
         />
+        <p>Pages</p>
         <input
           required 
           type="number" 
@@ -83,6 +90,7 @@ function CreateProduct() {
           onChange={e => setPages(Number(e.target.value))} 
           placeholder="Pages"
         />
+        <p>Link to the image</p>
         <input
           required 
           type="url" 
