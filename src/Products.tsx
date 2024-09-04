@@ -51,33 +51,40 @@ function Products() {
   }
 
   return (
-    <div className="products-grid">
-      {
-        books.map((book) => {
-          const {cover} = book
-          const {title} = book
-          const {index} = book
-          const {isLiked} = book
+    <div className="product">
+      <label>Filter books: </label>
+      <select>
+        <option>All</option>
+        <option>Liked</option>
+      </select>
 
-          return (
-            <div className="product-container" key={index}>
-              <Link to={`/products/${index}`}>
-                <div className="product-image-container">
-                  <img className="product-image" src={cover} alt={title}/>
+      <div className="products-grid">
+        {
+          books.map((book) => {
+            const {cover} = book
+            const {title} = book
+            const {index} = book
+            const {isLiked} = book
+            return (
+              <div className="product-container" key={index}>
+                <Link to={`/products/${index}`}>
+                  <div className="product-image-container">
+                    <img className="product-image" src={cover} alt={title}/>
+                  </div>
+                  <p>{title}</p>
+                </Link>
+                <div className="like-container" onClick={() => handleLike(index)}>
+                  <img className="like-image"
+                    src={isLiked ? likePressed : likeEmpty}
+                    alt="like-image"
+                  />
                 </div>
-                <p>{title}</p>
-              </Link>
-              <div className="like-container" onClick={() => handleLike(index)}>
-                <img className="like-image"
-                  src={isLiked ? likePressed : likeEmpty} 
-                  alt="like-image" 
-                />
+                <button onClick={() => handleDelete(index)}>delete</button>
               </div>
-              <button onClick={() => handleDelete(index)}>delete</button>
-            </div>
-          )
-        })
-      }
+            )
+          })
+        }
+      </div>
     </div>
   )
 }

@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react"
+// import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
-import { Book, NewBook } from "./ProductTypes"
+import { NewBook } from "./ProductTypes"
 import { loadFromStorage } from "./localStorage"
 import { Link } from "react-router-dom"
 
